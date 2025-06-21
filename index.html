@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UCSF Discharge Instructions Translation Request</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
       margin: 0;
       padding: 20px;
-      background-color: #f7f7f7;
     }
-    .container {
+    .form-container {
       background-color: #fff;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 25px;
-      border-radius: 8px;
       border: 1px solid #ccc;
+      padding: 25px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
     }
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       margin-bottom: 10px;
     }
     .description {
@@ -29,8 +29,9 @@
     }
     label {
       font-weight: bold;
-      display: block;
-      margin-top: 15px;
+    }
+    .form-group {
+      margin-bottom: 20px;
     }
     input[type="text"],
     input[type="email"],
@@ -38,23 +39,15 @@
     textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
       box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
-    .radio-group,
-    .checkbox-group {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-    .radio-group label,
-    .checkbox-group label {
-      font-weight: normal;
+    .inline-options label {
       margin-right: 15px;
+      font-weight: normal;
     }
     .submit-button {
-      margin-top: 20px;
       background-color: #28a745;
       color: white;
       padding: 12px 25px;
@@ -69,7 +62,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="form-container">
     <h1>UCSF Discharge Instructions Translation Request</h1>
     <p class="description">
       The translator will translate the existing text from the Discharge Instructions in Apex into the requested language and insert the translated text alongside the original English.
@@ -77,45 +70,61 @@
 
     <form>
       <!-- Location -->
-      <label>Location: <span class="required">*</span></label>
-      <div class="radio-group">
-        <label><input type="radio" name="location" required> UCSF Health</label>
-        <label><input type="radio" name="location"> UCSF Campus</label>
-        <label><input type="radio" name="location"> BCH Oakland</label>
+      <div class="form-group">
+        <label>Location: <span class="required">*</span></label><br/>
+        <div class="inline-options">
+          <label><input type="radio" name="location" required /> UCSF Health</label>
+          <label><input type="radio" name="location" /> UCSF Campus</label>
+          <label><input type="radio" name="location" /> BCH Oakland</label>
+        </div>
       </div>
 
       <!-- Translated Language -->
-      <label>Translated Language: <span class="required">*</span></label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="language"> Spanish</label>
-        <label><input type="checkbox" name="language"> Russian</label>
-        <label><input type="checkbox" name="language"> Chinese</label>
-        <label><input type="checkbox" name="language"> Other</label>
+      <div class="form-group">
+        <label>Translated Language: <span class="required">*</span></label><br/>
+        <div class="inline-options">
+          <label><input type="checkbox" name="language" /> Spanish</label>
+          <label><input type="checkbox" name="language" /> Russian</label>
+          <label><input type="checkbox" name="language" /> Chinese</label>
+          <label><input type="checkbox" name="language" /> Other</label>
+        </div>
+        <input type="text" placeholder="Specify other language" />
       </div>
-      <input type="text" placeholder="Specify other language">
 
       <!-- Date Needed -->
-      <label for="date">Date Needed: <span class="required">*</span></label>
-      <input type="date" id="date" name="date" required>
+      <div class="form-group">
+        <label for="date">Date Needed: <span class="required">*</span></label><br/>
+        <input type="date" id="date" name="date" required />
+      </div>
 
       <!-- MRN -->
-      <label for="mrn">Medical Record Number (MRN): <span class="required">*</span></label>
-      <input type="text" id="mrn" name="mrn" inputmode="numeric" pattern="[0-9]*" required>
+      <div class="form-group">
+        <label for="mrn">Medical Record Number (MRN): <span class="required">*</span></label><br/>
+        <input type="text" id="mrn" name="mrn" inputmode="numeric" pattern="[0-9]*" required />
+      </div>
 
       <!-- Requester's Name -->
-      <label for="name">Requester's Name: <span class="required">*</span></label>
-      <input type="text" id="name" name="name" required>
+      <div class="form-group">
+        <label for="name">Requester's Name: <span class="required">*</span></label><br/>
+        <input type="text" id="name" name="name" required />
+      </div>
 
-      <!-- Requester's Email -->
-      <label for="email">Requester's Email Address: <span class="required">*</span></label>
-      <input type="email" id="email" name="email" required>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Requester's Email Address: <span class="required">*</span></label><br/>
+        <input type="email" id="email" name="email" required />
+      </div>
 
       <!-- Comments -->
-      <label for="comments">Special Needs / Comments:</label>
-      <textarea id="comments" name="comments" rows="4"></textarea>
+      <div class="form-group">
+        <label for="comments">Special Needs / Comments:</label><br/>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
 
-      <!-- Submit -->
-      <button type="submit" class="submit-button">SUBMIT</button>
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="submit-button">SUBMIT</button>
+      </div>
     </form>
   </div>
 </body>
