@@ -31,8 +31,11 @@
       font-weight: bold;
     }
     input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
     textarea {
-      width: 100%;
+      width: calc(100% - 10px);
       padding: 0.5em;
       margin-top: 0.5em;
       font-size: 1em;
@@ -91,16 +94,16 @@
     <input type="text" placeholder="Specify other language">
 
     <label>Date Needed: <span class="required">*</span></label>
-    <input type="text">
+    <input type="date">
 
     <label>Medical Record Number (MRN): <span class="required">*</span></label>
-    <input type="text">
+    <input type="tel">
 
     <label>Requester's Name: <span class="required">*</span></label>
     <input type="text">
 
     <label>Requester's Email Address: <span class="required">*</span></label>
-    <input type="text">
+    <input type="email">
 
     <label>Special Needs / Comments:</label>
     <textarea rows="4"></textarea>
