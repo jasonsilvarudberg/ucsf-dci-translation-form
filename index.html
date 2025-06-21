@@ -1,0 +1,131 @@
+<table id="ctl00_MainContent_Table1" class="boxscheme" cellspacing="2" cellpadding="1" border="0" style="border-width:1px;border-style:solid;width:95%;margin-top:10px; padding: 3px">
+  <tbody>
+    <!-- Title -->
+    <tr>
+      <td colspan="3" style="color:Black;font-size:18pt;font-weight:bold;height:40px;text-align:left;">
+        UCSF Discharge Instructions Translation Request
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td style="color:Red;font-size:10pt;font-weight:normal;">
+        <div style="float:right;">(*) Required Fields.</div>
+      </td>
+    </tr>
+
+    <!-- Location -->
+    <tr style="border-width:2px;border-style:solid;height:25px;">
+      <td class="leftHeading"><span style="font-weight:bold;">Location:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td>
+        <table border="0">
+          <tr>
+            <td>
+              <label class="radio-inline">
+                <input type="radio" name="rdBtnHospitals" checked="checked"> UCSF Health
+              </label>
+            </td>
+            <td>
+              <label class="radio-inline">
+                <input type="radio" name="rdBtnHospitals"> UCSF Campus
+              </label>
+            </td>
+            <td>
+              <label class="radio-inline">
+                <input type="radio" name="rdBtnHospitals"> BCH Oakland
+              </label>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Translated Language -->
+    <tr style="height:25px;">
+      <td class="leftHeading"><span style="font-weight:bold;">Translated Language:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td>
+        <table border="0">
+          <tr>
+            <td>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="rdBtnSpanish"> Spanish
+              </label>
+            </td>
+            <td>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="rdBtnRussian"> Russian
+              </label>
+            </td>
+            <td>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="rdBtnChinese"> Chinese
+              </label>
+            </td>
+            <td>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="rdBtnOther"> Other
+              </label>
+            </td>
+            <td>
+              <input type="text" name="OtherLanguageText" style="width:210px;" placeholder="Specify other language">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Date Needed -->
+    <tr>
+      <td class="leftHeading"><span style="font-weight:bold;">Date Needed:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td colspan="2">
+        <input type="text" class="form-controlWaterMark watermark">
+      </td>
+    </tr>
+
+    <!-- MRN -->
+    <tr>
+      <td class="leftHeading"><span style="font-weight:bold;">Medical Record Number (MRN):</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+
+    <!-- Requester's Name -->
+    <tr>
+      <td class="leftHeading"><span style="font-weight:bold;">Requester's Name:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+
+    <!-- Requester's Email -->
+    <tr>
+      <td class="leftHeading"><span style="font-weight:bold;">Requester's Email Address:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
+      <td><input type="text" class="form-control"></td>
+    </tr>
+
+    <!-- Special Needs / Comments -->
+    <tr>
+      <td class="leftHeading" valign="top"><span style="font-weight:bold;">Special Needs / Comments:</span></td>
+      <td colspan="2">
+        <textarea rows="3" cols="50" class="form-controlWaterMark watermark"></textarea>
+      </td>
+    </tr>
+
+    <!-- Submit Button -->
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <div style="margin-left:10px;">
+          <input type="submit" value="SUBMIT" class="btn-success">
+        </div>
+      </td>
+    </tr>
+
+    <!-- Final Note -->
+    <tr>
+      <td colspan="3">
+        <div style="margin-top:20px; font-size:13px;">
+          The translator will translate the existing text in Apex in the Discharge Instructions into the requested language and insert the translated text alongside the original English.
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
