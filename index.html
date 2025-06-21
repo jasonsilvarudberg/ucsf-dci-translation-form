@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,127 +8,108 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1em;
+      background-color: #f9f9f9;
     }
-    .btn-success {
+    .container {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 1em;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 0.5em;
+    }
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+    }
+    .submit-btn {
+      margin-top: 1.5em;
+      padding: 0.75em;
       background-color: #28a745;
       color: white;
+      font-size: 1em;
       border: none;
-      padding: 6px 12px;
-      font-size: 14px;
+      border-radius: 4px;
+      width: 100%;
       cursor: pointer;
     }
-    .leftHeading {
-      font-weight: bold;
-      vertical-align: top;
-      padding-right: 10px;
+    .note {
+      margin-top: 2em;
+      font-size: 0.95em;
+      color: #333;
     }
-    .form-control {
-      width: 100%;
-      padding: 6px;
-      font-size: 14px;
-    }
-    .form-controlWaterMark {
-      width: 100%;
-      padding: 6px;
-      font-size: 14px;
+    .required {
+      color: red;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>UCSF Discharge Instructions Translation Request</h1>
 
-  <table id="ctl00_MainContent_Table1" class="boxscheme" cellspacing="2" cellpadding="1" border="0" style="border-width:1px;border-style:solid;width:95%;margin-top:10px; padding: 3px">
-    <tbody>
-      <!-- Title -->
-      <tr>
-        <td colspan="3" style="color:Black;font-size:18pt;font-weight:bold;height:40px;text-align:left;">
-          UCSF Discharge Instructions Translation Request
-        </td>
-      </tr>
+    <label>Location: <span class="required">*</span></label>
+    <div class="radio-group">
+      <label><input type="radio" name="location"> UCSF Health</label>
+      <label><input type="radio" name="location"> UCSF Campus</label>
+      <label><input type="radio" name="location"> BCH Oakland</label>
+    </div>
 
-      <tr>
-        <td></td>
-        <td></td>
-        <td style="color:Red;font-size:10pt;font-weight:normal;">
-          <div style="float:right;">(*) Required Fields.</div>
-        </td>
-      </tr>
+    <label>Translated Language: <span class="required">*</span></label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="language"> Spanish</label>
+      <label><input type="checkbox" name="language"> Russian</label>
+      <label><input type="checkbox" name="language"> Chinese</label>
+      <label><input type="checkbox" name="language"> Other</label>
+    </div>
+    <input type="text" placeholder="Specify other language">
 
-      <!-- Location -->
-      <tr style="border-width:2px;border-style:solid;height:25px;">
-        <td class="leftHeading"><span style="font-weight:bold;">Location:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td>
-          <table border="0">
-            <tr>
-              <td><label class="radio-inline"><input type="radio" name="rdBtnHospitals" checked="checked"> UCSF Health</label></td>
-              <td><label class="radio-inline"><input type="radio" name="rdBtnHospitals"> UCSF Campus</label></td>
-              <td><label class="radio-inline"><input type="radio" name="rdBtnHospitals"> BCH Oakland</label></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+    <label>Date Needed: <span class="required">*</span></label>
+    <input type="text">
 
-      <!-- Translated Language -->
-      <tr style="height:25px;">
-        <td class="leftHeading"><span style="font-weight:bold;">Translated Language:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td>
-          <table border="0">
-            <tr>
-              <td><label class="checkbox-inline"><input type="checkbox" name="rdBtnSpanish"> Spanish</label></td>
-              <td><label class="checkbox-inline"><input type="checkbox" name="rdBtnRussian"> Russian</label></td>
-              <td><label class="checkbox-inline"><input type="checkbox" name="rdBtnChinese"> Chinese</label></td>
-              <td><label class="checkbox-inline"><input type="checkbox" name="rdBtnOther"> Other</label></td>
-              <td><input type="text" name="OtherLanguageText" style="width:210px;" placeholder="Specify other language"></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+    <label>Medical Record Number (MRN): <span class="required">*</span></label>
+    <input type="text">
 
-      <!-- Date Needed -->
-      <tr>
-        <td class="leftHeading"><span style="font-weight:bold;">Date Needed:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td colspan="2"><input type="text" class="form-controlWaterMark watermark"></td>
-      </tr>
+    <label>Requester's Name: <span class="required">*</span></label>
+    <input type="text">
 
-      <!-- MRN -->
-      <tr>
-        <td class="leftHeading"><span style="font-weight:bold;">Medical Record Number (MRN):</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td><input type="text" class="form-control"></td>
-      </tr>
+    <label>Requester's Email Address: <span class="required">*</span></label>
+    <input type="text">
 
-      <!-- Requester's Name -->
-      <tr>
-        <td class="leftHeading"><span style="font-weight:bold;">Requester's Name:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td><input type="text" class="form-control"></td>
-      </tr>
+    <label>Special Needs / Comments:</label>
+    <textarea rows="4"></textarea>
 
-      <!-- Requester's Email -->
-      <tr>
-        <td class="leftHeading"><span style="font-weight:bold;">Requester's Email Address:</span>&nbsp;<span style="color:Red;font-weight:bold;">*</span></td>
-        <td><input type="text" class="form-control"></td>
-      </tr>
+    <button class="submit-btn">SUBMIT</button>
 
-      <!-- Special Needs / Comments -->
-      <tr>
-        <td class="leftHeading" valign="top"><span style="font-weight:bold;">Special Needs / Comments:</span></td>
-        <td colspan="2"><textarea rows="3" cols="50" class="form-controlWaterMark watermark"></textarea></td>
-      </tr>
-
-      <!-- Submit Button -->
-      <tr>
-        <td>&nbsp;</td>
-        <td><div style="margin-left:10px;"><input type="submit" value="SUBMIT" class="btn-success"></div></td>
-      </tr>
-
-      <!-- Final Note -->
-      <tr>
-        <td colspan="3">
-          <div style="margin-top:20px; font-size:13px;">
-            The translator will translate the existing text from the Discharge Instructions in Apex into the requested language and insert the translated text alongside the original English.
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+    <div class="note">
+      The translator will translate the existing text from the Discharge Instructions in Apex into the requested language and insert the translated text alongside the original English.
+    </div>
+  </div>
 </body>
 </html>
